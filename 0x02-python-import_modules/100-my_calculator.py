@@ -18,3 +18,4 @@ if __name__ == '__main__':
     else:
         print('Usage: {:s} <a> <operator> <b>'.format(sys.argv[0]))
         sys.exit(1)
+        
