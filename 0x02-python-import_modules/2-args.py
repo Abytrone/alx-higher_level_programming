@@ -1,12 +1,18 @@
 #!/usr/bin/python3
-import sys
+from sys import argv
 
-args = sys.argv[1:]
 
-num_args = len(args)
+def main():
+    print('{} argument'.format(len(argv) - 1), end='')
+    if len(argv) == 1:
+        print('s.')
+    elif len(argv) == 2:
+        print(':')
+    else:
+        print('s:')
+    for i in range(1, len(argv)):
+        print('{}: {}'.format(i, argv[i]))
 
-print(f"{num_args} argument{'s' if num_args != 1 else ''}: ", end="")
-print(f"{', '.join(args)}." if num_args > 0 else ".", end="\n\n")
-
-for i in range(num_args):
-    print(f"{i+1}: {args[i]}")
+if __name__ == "__main__":
+    main()
+    
